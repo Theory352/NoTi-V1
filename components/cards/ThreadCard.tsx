@@ -39,9 +39,11 @@ function ThreadCard({
   comments,
   isComment,
 }: Props) {
+  const truncatedContent = content.length > 100 ? `${content.substring(0, 100)}...` : content;
+
   return (
     <article
-      className={`flex w-full flex-col rounded-xl ${
+      className={`flex w-full  flex-col rounded-xl ${
         isComment ? "px-0 xs:px-7" : "bg-dark-2 p-7"
       }`}
     >
@@ -67,7 +69,7 @@ function ThreadCard({
               </h4>
             </Link>
 
-            <p className='mt-2 text-small-regular text-light-2'>{content}</p>
+            <p className='mt-2 text-small-regular text-light-2'>{truncatedContent}</p>
 
             <div className={`${isComment && "mb-10"} mt-5 flex flex-col gap-3`}>
               <div className='flex gap-3.5'>
