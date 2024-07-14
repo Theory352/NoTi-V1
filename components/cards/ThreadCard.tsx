@@ -39,7 +39,7 @@ function ThreadCard({
   comments,
   isComment,
 }: Props) {
-  const truncatedContent = content.length > 100 ? `${content.substring(0, 100)}...` : content;
+  const truncatedContent = content.length > 50 ? `${content.substring(0, 50)}...` : content;
 
   return (
     <article
